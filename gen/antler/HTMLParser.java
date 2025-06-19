@@ -237,433 +237,84 @@ public class HTMLParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class StatementContext extends ParserRuleContext {
+		public DeclarationContext declaration() {
+			return getRuleContext(DeclarationContext.class,0);
+		}
+		public HtmlProgramContext htmlProgram() {
+			return getRuleContext(HtmlProgramContext.class,0);
+		}
+		public CssProgramContext cssProgram() {
+			return getRuleContext(CssProgramContext.class,0);
+		}
+		public VariableDeclarationContext variableDeclaration() {
+			return getRuleContext(VariableDeclarationContext.class,0);
+		}
+		public ImportModelDeclarationContext importModelDeclaration() {
+			return getRuleContext(ImportModelDeclarationContext.class,0);
+		}
+		public ExportModelDeclarationContext exportModelDeclaration() {
+			return getRuleContext(ExportModelDeclarationContext.class,0);
+		}
+		public FunctionDeclarationContext functionDeclaration() {
+			return getRuleContext(FunctionDeclarationContext.class,0);
+		}
+		public ClassDeclarationContext classDeclaration() {
+			return getRuleContext(ClassDeclarationContext.class,0);
+		}
+		public InterfaceDeclarationContext interfaceDeclaration() {
+			return getRuleContext(InterfaceDeclarationContext.class,0);
+		}
+		public ObjectCreationContext objectCreation() {
+			return getRuleContext(ObjectCreationContext.class,0);
+		}
+		public EnumDeclarationContext enumDeclaration() {
+			return getRuleContext(EnumDeclarationContext.class,0);
+		}
+		public ConsolDeclarationContext consolDeclaration() {
+			return getRuleContext(ConsolDeclarationContext.class,0);
+		}
+		public ExpressionStatementContext expressionStatement() {
+			return getRuleContext(ExpressionStatementContext.class,0);
+		}
+		public ReturnStatementContext returnStatement() {
+			return getRuleContext(ReturnStatementContext.class,0);
+		}
+		public ThrowStatementContext throwStatement() {
+			return getRuleContext(ThrowStatementContext.class,0);
+		}
+		public ObjectClassContext objectClass() {
+			return getRuleContext(ObjectClassContext.class,0);
+		}
+		public ObjectInterfaceContext objectInterface() {
+			return getRuleContext(ObjectInterfaceContext.class,0);
+		}
+		public CallFunctiosContext callFunctios() {
+			return getRuleContext(CallFunctiosContext.class,0);
+		}
+		public AssignmentContext assignment() {
+			return getRuleContext(AssignmentContext.class,0);
+		}
+		public EmitStatementContext emitStatement() {
+			return getRuleContext(EmitStatementContext.class,0);
+		}
+		public ThisStatementContext thisStatement() {
+			return getRuleContext(ThisStatementContext.class,0);
+		}
 		public StatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_statement; }
-	 
-		public StatementContext() { }
-		public void copyFrom(StatementContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class HTMLStatementContext extends StatementContext {
-		public HtmlProgramContext htmlProgram() {
-			return getRuleContext(HtmlProgramContext.class,0);
-		}
-		public HTMLStatementContext(StatementContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterHTMLStatement(this);
+			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitHTMLStatement(this);
+			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitStatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitHTMLStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ExportStatementContext extends StatementContext {
-		public ExportModelDeclarationContext exportModelDeclaration() {
-			return getRuleContext(ExportModelDeclarationContext.class,0);
-		}
-		public ExportStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterExportStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitExportStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitExportStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ObjectInterfaceStatementContext extends StatementContext {
-		public ObjectInterfaceContext objectInterface() {
-			return getRuleContext(ObjectInterfaceContext.class,0);
-		}
-		public ObjectInterfaceStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterObjectInterfaceStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitObjectInterfaceStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitObjectInterfaceStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class EmitstatementContext extends StatementContext {
-		public EmitStatementContext emitStatement() {
-			return getRuleContext(EmitStatementContext.class,0);
-		}
-		public EmitstatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterEmitstatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitEmitstatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitEmitstatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ConsoleStatementContext extends StatementContext {
-		public ConsolDeclarationContext consolDeclaration() {
-			return getRuleContext(ConsolDeclarationContext.class,0);
-		}
-		public ConsoleStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterConsoleStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitConsoleStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitConsoleStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ClassDeclarationStatementContext extends StatementContext {
-		public ClassDeclarationContext classDeclaration() {
-			return getRuleContext(ClassDeclarationContext.class,0);
-		}
-		public ClassDeclarationStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterClassDeclarationStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitClassDeclarationStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitClassDeclarationStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ExpressionStatementWrapperContext extends StatementContext {
-		public ExpressionStatementContext expressionStatement() {
-			return getRuleContext(ExpressionStatementContext.class,0);
-		}
-		public ExpressionStatementWrapperContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterExpressionStatementWrapper(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitExpressionStatementWrapper(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitExpressionStatementWrapper(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ObjectClassStatementContext extends StatementContext {
-		public ObjectClassContext objectClass() {
-			return getRuleContext(ObjectClassContext.class,0);
-		}
-		public ObjectClassStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterObjectClassStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitObjectClassStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitObjectClassStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ThrowstatementContext extends StatementContext {
-		public ThrowStatementContext throwStatement() {
-			return getRuleContext(ThrowStatementContext.class,0);
-		}
-		public ThrowstatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterThrowstatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitThrowstatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitThrowstatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ReturnstatementContext extends StatementContext {
-		public ReturnStatementContext returnStatement() {
-			return getRuleContext(ReturnStatementContext.class,0);
-		}
-		public ReturnstatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterReturnstatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitReturnstatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitReturnstatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ImportStatementContext extends StatementContext {
-		public ImportModelDeclarationContext importModelDeclaration() {
-			return getRuleContext(ImportModelDeclarationContext.class,0);
-		}
-		public ImportStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterImportStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitImportStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitImportStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class CSSStatementContext extends StatementContext {
-		public CssProgramContext cssProgram() {
-			return getRuleContext(CssProgramContext.class,0);
-		}
-		public CSSStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterCSSStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitCSSStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitCSSStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class EnumDeclarationStatementContext extends StatementContext {
-		public EnumDeclarationContext enumDeclaration() {
-			return getRuleContext(EnumDeclarationContext.class,0);
-		}
-		public EnumDeclarationStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterEnumDeclarationStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitEnumDeclarationStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitEnumDeclarationStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class AssignmentStatementContext extends StatementContext {
-		public AssignmentContext assignment() {
-			return getRuleContext(AssignmentContext.class,0);
-		}
-		public AssignmentStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterAssignmentStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitAssignmentStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitAssignmentStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class InterfaceDeclarationStatementContext extends StatementContext {
-		public InterfaceDeclarationContext interfaceDeclaration() {
-			return getRuleContext(InterfaceDeclarationContext.class,0);
-		}
-		public InterfaceDeclarationStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterInterfaceDeclarationStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitInterfaceDeclarationStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitInterfaceDeclarationStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class FunctionCallStatementContext extends StatementContext {
-		public CallFunctiosContext callFunctios() {
-			return getRuleContext(CallFunctiosContext.class,0);
-		}
-		public FunctionCallStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterFunctionCallStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitFunctionCallStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitFunctionCallStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class VariableDeclarationStatementContext extends StatementContext {
-		public VariableDeclarationContext variableDeclaration() {
-			return getRuleContext(VariableDeclarationContext.class,0);
-		}
-		public VariableDeclarationStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterVariableDeclarationStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitVariableDeclarationStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitVariableDeclarationStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ThisstatementContext extends StatementContext {
-		public ThisStatementContext thisStatement() {
-			return getRuleContext(ThisStatementContext.class,0);
-		}
-		public ThisstatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterThisstatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitThisstatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitThisstatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class FunctionDeclarationStatementContext extends StatementContext {
-		public FunctionDeclarationContext functionDeclaration() {
-			return getRuleContext(FunctionDeclarationContext.class,0);
-		}
-		public FunctionDeclarationStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterFunctionDeclarationStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitFunctionDeclarationStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitFunctionDeclarationStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class DeclarationStatementContext extends StatementContext {
-		public DeclarationContext declaration() {
-			return getRuleContext(DeclarationContext.class,0);
-		}
-		public DeclarationStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterDeclarationStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitDeclarationStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitDeclarationStatement(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ObjectCreationStatementContext extends StatementContext {
-		public ObjectCreationContext objectCreation() {
-			return getRuleContext(ObjectCreationContext.class,0);
-		}
-		public ObjectCreationStatementContext(StatementContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterObjectCreationStatement(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitObjectCreationStatement(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitObjectCreationStatement(this);
+			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitStatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -676,7 +327,6 @@ public class HTMLParser extends Parser {
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
 			case 1:
-				_localctx = new DeclarationStatementContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(107);
@@ -684,7 +334,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 2:
-				_localctx = new HTMLStatementContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(108);
@@ -692,7 +341,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 3:
-				_localctx = new CSSStatementContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(109);
@@ -700,7 +348,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 4:
-				_localctx = new VariableDeclarationStatementContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
 				setState(110);
@@ -708,7 +355,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 5:
-				_localctx = new ImportStatementContext(_localctx);
 				enterOuterAlt(_localctx, 5);
 				{
 				setState(111);
@@ -716,7 +362,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 6:
-				_localctx = new ExportStatementContext(_localctx);
 				enterOuterAlt(_localctx, 6);
 				{
 				setState(112);
@@ -724,7 +369,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 7:
-				_localctx = new FunctionDeclarationStatementContext(_localctx);
 				enterOuterAlt(_localctx, 7);
 				{
 				setState(113);
@@ -732,7 +376,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 8:
-				_localctx = new ClassDeclarationStatementContext(_localctx);
 				enterOuterAlt(_localctx, 8);
 				{
 				setState(114);
@@ -740,7 +383,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 9:
-				_localctx = new InterfaceDeclarationStatementContext(_localctx);
 				enterOuterAlt(_localctx, 9);
 				{
 				setState(115);
@@ -748,7 +390,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 10:
-				_localctx = new ObjectCreationStatementContext(_localctx);
 				enterOuterAlt(_localctx, 10);
 				{
 				setState(116);
@@ -756,7 +397,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 11:
-				_localctx = new EnumDeclarationStatementContext(_localctx);
 				enterOuterAlt(_localctx, 11);
 				{
 				setState(117);
@@ -764,7 +404,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 12:
-				_localctx = new ConsoleStatementContext(_localctx);
 				enterOuterAlt(_localctx, 12);
 				{
 				setState(118);
@@ -772,7 +411,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 13:
-				_localctx = new ExpressionStatementWrapperContext(_localctx);
 				enterOuterAlt(_localctx, 13);
 				{
 				setState(119);
@@ -780,7 +418,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 14:
-				_localctx = new ReturnstatementContext(_localctx);
 				enterOuterAlt(_localctx, 14);
 				{
 				setState(120);
@@ -788,7 +425,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 15:
-				_localctx = new ThrowstatementContext(_localctx);
 				enterOuterAlt(_localctx, 15);
 				{
 				setState(121);
@@ -796,7 +432,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 16:
-				_localctx = new ObjectClassStatementContext(_localctx);
 				enterOuterAlt(_localctx, 16);
 				{
 				setState(122);
@@ -804,7 +439,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 17:
-				_localctx = new ObjectInterfaceStatementContext(_localctx);
 				enterOuterAlt(_localctx, 17);
 				{
 				setState(123);
@@ -812,7 +446,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 18:
-				_localctx = new FunctionCallStatementContext(_localctx);
 				enterOuterAlt(_localctx, 18);
 				{
 				setState(124);
@@ -820,7 +453,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 19:
-				_localctx = new AssignmentStatementContext(_localctx);
 				enterOuterAlt(_localctx, 19);
 				{
 				setState(125);
@@ -828,7 +460,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 20:
-				_localctx = new EmitstatementContext(_localctx);
 				enterOuterAlt(_localctx, 20);
 				{
 				setState(126);
@@ -836,7 +467,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 21:
-				_localctx = new ThisstatementContext(_localctx);
 				enterOuterAlt(_localctx, 21);
 				{
 				setState(127);
@@ -858,53 +488,27 @@ public class HTMLParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class DeclarationContext extends ParserRuleContext {
+		public ServiceDeclarationContext serviceDeclaration() {
+			return getRuleContext(ServiceDeclarationContext.class,0);
+		}
+		public ComponentDeclarationContext componentDeclaration() {
+			return getRuleContext(ComponentDeclarationContext.class,0);
+		}
 		public DeclarationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_declaration; }
-	 
-		public DeclarationContext() { }
-		public void copyFrom(DeclarationContext ctx) {
-			super.copyFrom(ctx);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ComponentdeclarationContext extends DeclarationContext {
-		public ComponentDeclarationContext componentDeclaration() {
-			return getRuleContext(ComponentDeclarationContext.class,0);
-		}
-		public ComponentdeclarationContext(DeclarationContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterComponentdeclaration(this);
+			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterDeclaration(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitComponentdeclaration(this);
+			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitDeclaration(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitComponentdeclaration(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class ServicedeclarationContext extends DeclarationContext {
-		public ServiceDeclarationContext serviceDeclaration() {
-			return getRuleContext(ServiceDeclarationContext.class,0);
-		}
-		public ServicedeclarationContext(DeclarationContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).enterServicedeclaration(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof HTMLParserListener ) ((HTMLParserListener)listener).exitServicedeclaration(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitServicedeclaration(this);
+			if ( visitor instanceof HTMLParserVisitor ) return ((HTMLParserVisitor<? extends T>)visitor).visitDeclaration(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -917,7 +521,6 @@ public class HTMLParser extends Parser {
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 			case 1:
-				_localctx = new ServicedeclarationContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(130);
@@ -925,7 +528,6 @@ public class HTMLParser extends Parser {
 				}
 				break;
 			case 2:
-				_localctx = new ComponentdeclarationContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(131);

@@ -18,166 +18,17 @@ public interface HTMLParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProgramRoot(HTMLParser.ProgramRootContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code DeclarationStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
+	 * Visit a parse tree produced by {@link HTMLParser#statement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDeclarationStatement(HTMLParser.DeclarationStatementContext ctx);
+	T visitStatement(HTMLParser.StatementContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code HTMLStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
+	 * Visit a parse tree produced by {@link HTMLParser#declaration}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitHTMLStatement(HTMLParser.HTMLStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code CSSStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCSSStatement(HTMLParser.CSSStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code VariableDeclarationStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVariableDeclarationStatement(HTMLParser.VariableDeclarationStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code ImportStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitImportStatement(HTMLParser.ImportStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code ExportStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExportStatement(HTMLParser.ExportStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code FunctionDeclarationStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFunctionDeclarationStatement(HTMLParser.FunctionDeclarationStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code ClassDeclarationStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitClassDeclarationStatement(HTMLParser.ClassDeclarationStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code InterfaceDeclarationStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitInterfaceDeclarationStatement(HTMLParser.InterfaceDeclarationStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code ObjectCreationStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitObjectCreationStatement(HTMLParser.ObjectCreationStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code EnumDeclarationStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEnumDeclarationStatement(HTMLParser.EnumDeclarationStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code ConsoleStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitConsoleStatement(HTMLParser.ConsoleStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code ExpressionStatementWrapper}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExpressionStatementWrapper(HTMLParser.ExpressionStatementWrapperContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Returnstatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitReturnstatement(HTMLParser.ReturnstatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Throwstatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitThrowstatement(HTMLParser.ThrowstatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code ObjectClassStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitObjectClassStatement(HTMLParser.ObjectClassStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code ObjectInterfaceStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitObjectInterfaceStatement(HTMLParser.ObjectInterfaceStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code FunctionCallStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFunctionCallStatement(HTMLParser.FunctionCallStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code AssignmentStatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAssignmentStatement(HTMLParser.AssignmentStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Emitstatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEmitstatement(HTMLParser.EmitstatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Thisstatement}
-	 * labeled alternative in {@link HTMLParser#statement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitThisstatement(HTMLParser.ThisstatementContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Servicedeclaration}
-	 * labeled alternative in {@link HTMLParser#declaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitServicedeclaration(HTMLParser.ServicedeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Componentdeclaration}
-	 * labeled alternative in {@link HTMLParser#declaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitComponentdeclaration(HTMLParser.ComponentdeclarationContext ctx);
+	T visitDeclaration(HTMLParser.DeclarationContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Componentdefinition}
 	 * labeled alternative in {@link HTMLParser#componentDeclaration}.
