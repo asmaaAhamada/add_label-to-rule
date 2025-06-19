@@ -13,35 +13,35 @@ program
 // القسم: جميع أنواع الجمل في البرنامج
 // ==========================================
 statement
-     : declaration                              #DeclarationStatement
-        | htmlProgram                              #HTMLStatement
-        | cssProgram                               #CSSStatement
-        | variableDeclaration                      #VariableDeclarationStatement
-        | importModelDeclaration                   #ImportStatement
-        | exportModelDeclaration                   #ExportStatement
-        | functionDeclaration                      #FunctionDeclarationStatement
-        | classDeclaration                         #ClassDeclarationStatement
-        | interfaceDeclaration                     #InterfaceDeclarationStatement
-        | objectCreation                           #ObjectCreationStatement
-        | enumDeclaration                          #EnumDeclarationStatement
-        | consolDeclaration                        #ConsoleStatement
-        | expressionStatement                      #ExpressionStatementWrapper
-        | returnStatement                          #Returnstatement
-        | throwStatement                           #Throwstatement
-        | objectClass                              #ObjectClassStatement
-        | objectInterface                          #ObjectInterfaceStatement
-        | callFunctios                             #FunctionCallStatement
-        | assignment                               #AssignmentStatement
-        | emitStatement                            #Emitstatement
-        | thisStatement                            #Thisstatement
+     : declaration
+        | htmlProgram
+        | cssProgram
+        | variableDeclaration
+        | importModelDeclaration
+        | exportModelDeclaration
+        | functionDeclaration
+        | classDeclaration
+        | interfaceDeclaration
+        | objectCreation
+        | enumDeclaration
+        | consolDeclaration
+        | expressionStatement
+        | returnStatement
+        | throwStatement
+        | objectClass
+        | objectInterface
+        | callFunctios
+        | assignment
+        | emitStatement
+        | thisStatement
         ;
 
 // ==========================================
 // القسم: تعريفات Angular
 // ==========================================
 declaration
-   : serviceDeclaration                        #Servicedeclaration
-   | componentDeclaration                      #Componentdeclaration
+   : serviceDeclaration
+   | componentDeclaration
    ;
 
 
